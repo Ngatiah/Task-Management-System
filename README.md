@@ -1,84 +1,132 @@
-📝 Task Management System – Firebase-Powered To-Do App
-A fully functional task management (to-do) application where users can add, edit, delete, and prioritize tasks. Built with React and powered by Firebase Authentication and Realtime Database, this app demonstrates practical CRUD operations, state management, and session handling.
+```markdown
+---
+# 📝 Task Management System – Firebase-Powered To-Do App
 
-🚀 Live Demo
+A **fully functional task management (to-do) application** where users can add, edit, delete, and prioritize tasks. Built with **React** and powered by **Firebase Authentication and Realtime Database**, this app demonstrates practical CRUD operations, state management, and session handling.
+
+---
+
+## 🚀 Live Demo
+
 Coming soon (Deploy via Vercel or Firebase Hosting)
 
-📌 Features
-✅ User authentication via Google and EmailWithPassword (Firebase Auth)
+---
 
-📋 Create, read, update, and delete tasks
+## 📌 Features
 
-🎯 Prioritize tasks with high/medium/low labels
+This Task Management System offers a comprehensive set of features to keep you organized:
 
-🗃️ Categorize tasks (e.g., Work, Personal, Study)
+* **User Authentication**: Secure login via Google and Email/Password using Firebase Auth.
+* **Task Management**:
+    * Create, Read, Update, and Delete (CRUD) tasks.
+    * Prioritize tasks with high, medium, and low labels.
+    * Categorize tasks (e.g., Work, Personal, Study).
+    * Set due dates for tasks.
+    * View all tasks per user session.
+* **User Interface**:
+    * Responsive and intuitive UI with dynamic styling.
+    * Category image mapping for a richer experience.
+* **Session Handling**:
+    * Session persistence, meaning your login state is retained.
 
-🗓️ Set due dates for tasks
+---
 
-🧾 View all tasks per user session
+## 🛠️ Tech Stack
 
-🎨 Responsive and intuitive UI with dynamic styling
+| Tech                   | Role                                    |
+| :--------------------- | :-------------------------------------- |
+| **React** | Frontend UI + State Management          |
+| **Tailwind CSS** | Styling and layout                      |
+| **Radix UI** | Styling and layout                      |
+| **Firebase Auth** | Google login & session management       |
+| **Firebase Realtime DB** | Task storage (CRUD backend)             |
+| **Vite** | Frontend tooling and build system       |
 
-🔒 Session persistence (login state retained)
+---
 
-🖼️ Category image mapping
+## 🔐 Security
 
-🛠️ Tech Stack
-Tech	Role
-React	Frontend UI + State Management
-Tailwind CSS / Radix UI	Styling and layout
-Firebase Auth	Google login & session management
-Firebase Realtime DB	Task storage (CRUD backend)
-Vite	Frontend tooling and build system
+We've prioritized your data's security:
 
-🔐 Security
-User sessions handled via Firebase Authentication
-Data is scoped to individual authenticated users (/tasks/{userId})
+* **User sessions** are securely handled via Firebase Authentication.
+* **Data is scoped** to individual authenticated users (`/tasks/{userId}`).
 
-📚 Learning Outcomes
-By building this project, you will gain hands-on experience with:
-🔁 Full CRUD operations
-🗂️ Task organization by priority and category
-🧠 React hooks and state management
-🔐 Secure login with Firebase Auth
-⚡ Firebase Realtime DB read/write operations
-🧭 Routing and protected routes (optional)
-🧪 Deployment with Vercel or Firebase Hosting
+---
 
-🧪 How to Run Locally
-1.Clone the repository
-git clone https://github.com/your-username/task-manager.git
-cd task-management-system
+## 📚 Learning Outcomes
 
-2.Install dependency based on on your preference:
-yarn 
-npm install
+By building and exploring this project, you'll gain hands-on experience with:
 
-3.Configure firebase
-Create a .env file at the root:
-VITE_FIREBASE_API_KEY=your_key
-VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_DATABASE_URL=https://your_project.firebaseio.com
-VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
+* **Full CRUD operations** for real-world applications.
+* **Task organization** by priority and category, crucial for effective task management.
+* **React hooks and state management** for building dynamic user interfaces.
+* **Secure login** with Firebase Authentication.
+* **Firebase Realtime DB** read/write operations for dynamic data handling.
+* **Routing and protected routes** (optional implementation for advanced navigation).
+* **Deployment** with Vercel or Firebase Hosting, preparing you for production.
 
-4.Start the app based on your preference:
-yarn dev
-npm run dev 
+---
 
-🧑‍💻 Author
-Ngatiah
+## 🧪 How to Run Locally
+
+Get this app up and running on your local machine in just a few steps:
+
+1.  **Clone the repository**:
+    ```bash
+    git clone [https://github.com/Ngatiah/Task-Management-System.git](https://github.com/Ngatiah/Task-Management-System.git)
+    cd Task-Management-System
+    ```
+
+2.  **Install dependencies** (choose your preferred package manager):
+    ```bash
+    yarn
+    # OR
+    npm install
+    ```
+
+3.  **Configure Firebase**:
+    Create a `.env` file at the root of your project and add your Firebase configuration details:
+
+    ```env
+    VITE_FIREBASE_API_KEY=your_key
+    VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+    VITE_FIREBASE_PROJECT_ID=your_project_id
+    VITE_FIREBASE_DATABASE_URL=https://your_project.firebaseio.com
+    VITE_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
+    VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+    VITE_FIREBASE_APP_ID=your_app_id
+    ```
+
+4.  **Start the app** (choose your preferred package manager):
+    ```bash
+    yarn dev
+    # OR
+    npm run dev
+    ```
+
+---
+
+## 🧑‍💻 Author
+
+**Ngatiah**
+
 Built with instinct, curiosity, and a love for React + Firebase.
 
-📦 Deployment
-You can deploy this app using:
-🔥 Firebase Hosting
-⚡ Vercel
+---
 
-📄 License
-MIT License — free to use, modify, and distribute.
+## 📦 Deployment
+
+You can easily deploy this application using:
+
+* **Firebase Hosting**
+* **Vercel**
+
+---
+
+## 📄 License
+
+**MIT License** — free to use, modify, and distribute.
+```
 
 
 
