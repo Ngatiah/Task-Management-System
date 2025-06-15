@@ -9,40 +9,50 @@ const Header = () => {
     const navigate = useNavigate()
     const { userLoggedIn,currentUser } = useAuth()
     return (
-        <nav className='flex flex-row gap-2 w-full z-20 fixed top-0 left-0 h-20 items-center justify-end'>
-            {
-                userLoggedIn
-                    ?
-                    <>
-                    {/* set image based auth method : customavatar or if providers use photoUrl */}
-                        {/* <img src={currentUser.photoURL} alt="photo-url" className="w-20 h-20 rounded-full mt-4" /> */}
-                         <CustomAvatar name={currentUser.displayName || currentUser.email}/>
-                         <DropdownMenu.Root>
-                            <DropdownMenu.Trigger>
-                                <Button variant='soft'>
-                                    {currentUser.displayName || currentUser.email}
-                                <DropdownMenu.TriggerIcon/>
-                                </Button>
-                            </DropdownMenu.Trigger>
-                            <DropdownMenu.Content>
-                                <DropdownMenu.Separator/>
-                                <DropdownMenu.Item onClick={() => { doSignOut().then(() => { navigate('/login') }) }}>
-                                    Logout
-                                </DropdownMenu.Item>
-                            </DropdownMenu.Content>
+        <nav className="flex items-center justify-between px-6 py-4 bg-white shadow-lg fixed top-0 left-0 w-full z-50 h-20 rounded-t-lg">
+            {/* <div className="text-xl font-bold text-gray-800">
+                <Link to="/login">YourAppName</Link>
+            </div> */}
 
-                        </DropdownMenu.Root>
-                        
-                    </>
-                    :
-                    <>
-                        <Link className='text-sm text-blue-600 underline' to={'/login'}>Login</Link>
-                        <Link className='text-sm text-blue-600 underline' to={'/register'}>Register New Account</Link>
-                    </>
-            }
+            {userLoggedIn ? (
+                <div className="flex items-center gap-4 ml-auto">
+                <CustomAvatar name={currentUser.displayName || currentUser.email} />
 
-        </nav>
+                <DropdownMenu.Root>
+                    <DropdownMenu.Trigger>
+                    <Button variant="soft">
+                        {currentUser.displayName || currentUser.email}
+                        <DropdownMenu.TriggerIcon />
+                    </Button>
+                    </DropdownMenu.Trigger>
+                    <DropdownMenu.Content>
+                    <DropdownMenu.Item
+                        onClick={() =>
+                        doSignOut().then(() => {
+                            navigate("/login");
+                        })
+                        }
+                    >
+                        Logout
+                    </DropdownMenu.Item>
+                    </DropdownMenu.Content>
+                </DropdownMenu.Root>
+                </div>
+            ) : (
+                <div className="flex items-center gap-3">
+                <Link className="text-blue-600 hover:underline" to="/login">
+                    Login
+                </Link>
+                <Link className="text-blue-600 hover:underline" to="/register">
+                    Register
+                </Link>
+                </div>
+            )}
+            </nav>
+
     )
 }
 
 export default Header
+
+

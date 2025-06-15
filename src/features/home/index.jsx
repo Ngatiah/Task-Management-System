@@ -33,7 +33,7 @@ const Home = () => {
     return (
         <>
         <div className='flex justify-end'>
-        <header className="flex justify-between items-center bg-white p-4  sticky top-0 z-10 w-2/3 mt-10 ">
+        <header className="flex justify-between items-center bg-white p-4  sticky top-0 z-10 w-2/3 mt-20">
         <input
             type="text"
             placeholder="Search for tasks"
