@@ -73,7 +73,7 @@ Get this app up and running on your local machine in just a few steps:
 
 1.  **Clone the repository**:
     ```bash
-    git clone [https://github.com/Ngatiah/Task-Management-System.git](https://github.com/Ngatiah/Task-Management-System.git)
+    git clone https://github.com/Ngatiah/Task-Management-System.git
     cd Task-Management-System
     ```
 
