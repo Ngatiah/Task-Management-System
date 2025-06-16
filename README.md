@@ -128,7 +128,7 @@ You can easily deploy this application using:
 **MIT License** — free to use, modify, and distribute.
 ```
 
-Viewers :![visitors](https://visitor-badge.glitch.me/badge?page_id=Ngatiah.Task-Management-System)
+![Visitors](https://visitor-badge.glitch.me/badge?page_id=Ngatiah.Task-Management-System)
 
 
 # React + Vite
