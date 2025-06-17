@@ -38,7 +38,7 @@ This Task Management System offers a comprehensive set of features to keep you o
 | **React** | Frontend UI + State Management          |
 | **Tailwind CSS** | Styling and layout                      |
 | **Radix UI** | Styling and layout                      |
-| **Firebase Auth** | Google & Facebooklogin & session management       |
+| **Firebase Auth** | Google & Facebook login & session management       |
 | **Firebase Realtime DB** | Task storage (CRUD backend)             |
 | **Vite** | Frontend tooling and build system       |
 
