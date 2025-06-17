@@ -52,7 +52,10 @@ const Home = () => {
         </div>
         </header>
         </div>
+        {
+            currentUser &&
         <div className='text-2xl font-bold p-4'>Hello {currentUser.displayName ? currentUser.displayName : currentUser.email}</div>
+        }
 
        <section className='p-4 flex flex-cols-1 items-center gap-4'>
                 {filteredTasks.length === 0 ? (

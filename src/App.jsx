@@ -8,6 +8,7 @@ import EditTask from "./components/services/tasks/EditTask";
 import { AuthProvider } from "./contexts/authContext";
 import { useRoutes } from "react-router-dom";
 import ProtectedRoute from "./components/ui/ProtectedRoute";
+import ForgotPassword from "./components/auth/forgot-password";
 
 function App() {
   const routesArray = [
@@ -35,6 +36,11 @@ function App() {
       path: "/edit-task/:taskId",
       element: <ProtectedRoute> <EditTask /> </ProtectedRoute> ,
     },
+    {
+      path: "/forgot-password",
+      element: <ForgotPassword/> ,
+    },
+    
   ];
   let routesElement = useRoutes(routesArray);
   return (

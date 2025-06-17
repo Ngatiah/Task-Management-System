@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { Navigate, Link } from 'react-router-dom'
-import { doSignInWithEmailAndPassword,doSignInWithGoogle } from '../../firebase/auth'
+import { doSignInWithEmailAndPassword,doSignInWithGoogle,doSignInWithFacebook } from '../../firebase/auth'
 import { useAuth } from '../../contexts/authContext'
 const Login = () => {
-    const { userLoggedIn } = useAuth()
-
+    const { userLoggedIn} = useAuth()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [isSigningIn, setIsSigningIn] = useState(false)
@@ -32,10 +31,47 @@ const Login = () => {
         }
     }
 
+     const onFacebookSignIn = async(e) => {
+        e.preventDefault()
+        setErrorMessage('')
+        if (!isSigningIn) {
+            setIsSigningIn(true)
+            // navigate('/home')
+            // doSignInWithGoogle().catch(err => {
+            // await doSignInWithFacebook().catch(_=> {
+            //     setIsSigningIn(false)
+            //     // console.log(err);
+                
+            // })
+            await doSignInWithFacebook(setErrorMessage)
+            setIsSigningIn(false)
+        }
+    }
+
+    // const onFacebookSignIn = (e) => {
+    // e.preventDefault();
+    // if (!isSigningIn) {
+    //     setIsSigningIn(true);
+    //     doSignInWithFacebook()
+    //     .then(() => {
+    //         // Optionally redirect manually if auth context doesn't pick up fast enough
+    //         navigate('/home'); 
+    //         // OR window.location.href = '/home';
+    //     })
+    //     .catch((err) => {
+    //         console.error("Facebook login error", err);
+    //         setIsSigningIn(false);
+    //         setErrorMessage("Facebook login failed. Please try again.");
+    //     });
+    // }
+    // };
+
+    
     
     return (
         <div>
             {userLoggedIn && (<Navigate to={'/home'} replace={true} />)}
+
 
             <main className="w-full h-screen flex self-center place-content-center place-items-center">
                 <div className="w-96 text-gray-600 space-y-5 p-4 shadow-xl border rounded-xl">
@@ -44,6 +80,12 @@ const Login = () => {
                             <h3 className="text-gray-800 text-xl font-semibold sm:text-2xl">Welcome back</h3>
                         </div>
                     </div>
+                    {errorMessage && (
+                        <div className="mb-4 text-red-600 font-bold text-center">
+                        {errorMessage}
+                        </div>
+                    )}
+                    
                     <form
                         onSubmit={onSubmit}
                         className="space-y-5"
@@ -68,7 +110,7 @@ const Login = () => {
                                 Password
                             </label>
                             <div className="text-sm">
-                                <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+                                <Link to={"/forgot-password"} className="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</Link>
                             </div>
                             </div>
                             <div className='mt-2'>
@@ -82,9 +124,9 @@ const Login = () => {
                             </div>
                         </div>
 
-                        {errorMessage && (
+                        {/* {errorMessage && (
                             <span className='text-red-600 font-bold'>{errorMessage}</span>
-                        )}
+                        )} */}
 
                         <button
                             type="submit"
@@ -104,6 +146,13 @@ const Login = () => {
                         className={`w-full flex items-center justify-center gap-x-3 py-2.5 border rounded-lg text-sm font-medium  ${isSigningIn ? 'cursor-not-allowed' : 'hover:bg-gray-100 transition duration-300 active:bg-gray-100'}`}>
                         <i className="mdi mdi-google"></i>
                         {isSigningIn ? 'Signing In...' : 'Continue with Google'}
+                    </button>
+                     <button
+                        disabled={isSigningIn}
+                        onClick={(e) => { onFacebookSignIn(e) }}
+                        className={`w-full flex items-center justify-center gap-x-3 py-2.5 border rounded-lg text-sm font-medium  ${isSigningIn ? 'cursor-not-allowed' : 'hover:bg-gray-100 transition duration-300 active:bg-gray-100 mt-2'}`}>
+                        <i className="mdi mdi-facebook"></i>
+                        {isSigningIn ? 'Signing In...' : 'Continue with Facebook'}
                     </button>
                 </div>
             </main>

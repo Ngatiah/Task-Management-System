@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { auth } from "../../firebase/firebase";
-import { GoogleAuthProvider } from "firebase/auth";
+import { FacebookAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
 
 const AuthContext = React.createContext();
@@ -14,6 +14,7 @@ export function AuthProvider({ children }) {
   const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [isEmailUser, setIsEmailUser] = useState(false);
   const [isGoogleUser, setIsGoogleUser] = useState(false);
+  const [isFbUser, setIsFbUser] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -38,6 +39,12 @@ export function AuthProvider({ children }) {
       );
       setIsGoogleUser(isGoogle);
 
+      // check if the auth provider is Facebook or not
+      const isFb = user.providerData.some(
+        (provider) => provider.providerId === FacebookAuthProvider.PROVIDER_ID
+      );
+      setIsFbUser(isFb)
+
       setUserLoggedIn(true);
     } else {
       setCurrentUser(null);
@@ -51,6 +58,7 @@ export function AuthProvider({ children }) {
     userLoggedIn,
     isEmailUser,
     isGoogleUser,
+    isFbUser,
     currentUser,
     setCurrentUser,
     loading

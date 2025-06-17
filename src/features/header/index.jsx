@@ -39,11 +39,11 @@ const Header = () => {
                 </DropdownMenu.Root>
                 </div>
             ) : (
-                <div className="flex items-center gap-3">
-                <Link className="text-blue-600 hover:underline" to="/login">
+                <div className="flex items-center ml-auto gap-3">
+                <Link className="text-blue-600 no-underline font-bold hover:bg-blue-100 px-2 py-1 rounded transition duration-200" to="/login">
                     Login
                 </Link>
-                <Link className="text-blue-600 hover:underline" to="/register">
+                <Link className="text-blue-600 font-bold no-underline hover:bg-blue-100 px-2 py-1 rounded transition duration-200" to="/register">
                     Register
                 </Link>
                 </div>

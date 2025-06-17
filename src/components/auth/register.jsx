@@ -20,7 +20,23 @@ const Register = () => {
         setErrorMessage('')
         if(!isRegistering) {
             setIsRegistering(true)
-            await doCreateUserWithEmailAndPassword(email, password)
+            // await doCreateUserWithEmailAndPassword(email, password)
+        try {
+            await doCreateUserWithEmailAndPassword(email, password);
+            // Optional: Send verification email or redirect
+        } catch (err) {
+            if (err.code === 'auth/email-already-in-use') {
+            setErrorMessage("Account already exists. Try logging in with another email or using a different sign-in method.");
+            } else if (err.code === 'auth/invalid-email') {
+            setErrorMessage("Please enter a valid email address.");
+            } else if (err.code === 'auth/weak-password') {
+            setErrorMessage("Password should be at least 6 characters.");
+            } else {
+            setErrorMessage("Registration failed. Please try again.");
+            }
+        } finally {
+            setIsRegistering(false);
+        }  
         }
     }
 
@@ -34,6 +50,12 @@ const Register = () => {
                         <div className="mt-2">
                             <h3 className="text-gray-800 text-xl font-semibold sm:text-2xl">Create a New Account</h3>
                         </div>
+
+                        {errorMessage && (
+                            <div className="mb-4 text-red-600 font-bold text-center">
+                            {errorMessage}
+                            </div>
+                         )}
 
                     </div>
                     <form
@@ -81,9 +103,9 @@ const Register = () => {
                             />
                         </div>
 
-                        {errorMessage && (
+                        {/* {errorMessage && (
                             <span className='text-red-600 font-bold'>{errorMessage}</span>
-                        )}
+                        )} */}
 
                         <button
                             type="submit"
@@ -94,7 +116,7 @@ const Register = () => {
                         </button>
                         <div className="text-sm text-center">
                             Already have an account? {'   '}
-                            <Link to={'/login'} className="text-center text-sm hover:underline font-bold">Continue</Link>
+                            <Link to={'/login'} className="text-center text-sm hover:underline font-bold">Sign In</Link>
                         </div>
                     </form>
                 </div>

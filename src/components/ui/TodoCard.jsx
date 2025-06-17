@@ -127,14 +127,14 @@ const TodoCard = ({title,description,taskId,onDeleted,imageUrl,category,dueDate,
       <div className="mt-2 flex justify-start gap-2">
         {priority && (
           <div className="mt-3 flex justify-start items-center">
-            <span className={`text-xs font-semibold p-3 rounded-full ${priorityColors[priority]} || "bg-gray-100 text-gray-800"`}>
+            <span className={`text-xs font-semibold p-2 rounded-full ${priorityColors[priority]} || "bg-gray-100 text-gray-800"`}>
              Priority: {priority}
             </span>
           </div>
         )}
         {resolvedCategory && (
           <div className="mt-3 flex justify-start items-center">
-            <span className={`text-xs font-semibold p-3 rounded-full ${badgeColor}`}>
+            <span className={`text-xs font-semibold p-2 rounded-full ${badgeColor}`}>
               {resolvedCategory}
             </span>
           </div>
@@ -142,7 +142,7 @@ const TodoCard = ({title,description,taskId,onDeleted,imageUrl,category,dueDate,
       </div>
         {dueDate && (
           <div className="mt-3 flex justify-start items-center">
-            <span className="text-xs font-semibold p-3 rounded-full bg-gray-100 text-gray-800">
+            <span className="text-xs font-semibold p-2 rounded-full bg-gray-100 text-gray-800">
               Due: {new Date(dueDate).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' })}
             </span>
           </div>
