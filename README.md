@@ -2,8 +2,9 @@
 ---
 # 📝 Task Management System – Firebase-Powered To-Do App
 
-A **fully functional task management (to-do) application** where users can add, edit, delete, and prioritize tasks.
- Built with **React** and powered by **Firebase Authentication and Realtime Database**, this app demonstrates practical CRUD operations, state management, and session handling.
+A fully functional task management (to-do) application** where users can add, edit, delete, and prioritize tasks.
+
+Built with React and powered by Firebase Authentication and Realtime Database, this app demonstrates practical CRUD operations, state management, and session handling.
 
 ---
 
