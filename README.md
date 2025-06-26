@@ -106,12 +106,7 @@ Get this app up and running on your local machine in just a few steps:
 
 ---
 
-## 🧑‍💻 Author
-
-**Ngatiah**
-
-Built with instinct, curiosity, and a love for React + Firebase.
-
+🛠️ Built with instinct, curiosity, and a love for React + Firebase.
 ---
 
 ## 📦 Deployment
@@ -123,15 +118,9 @@ You can easily deploy this application using:
 
 ---
 
-## 📄 License
-
-**MIT License** — free to use, modify, and distribute.
-```
-
 ![Visitors](https://visitor-badge.glitch.me/badge?page_id=Ngatiah.Task-Management-System)
 
-
-# React + Vite
+# React + Vite 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
